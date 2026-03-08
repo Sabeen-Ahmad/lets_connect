@@ -1,6 +1,25 @@
 // ===================== ICONS =====================
 lucide.createIcons();
+  const PORTFOLIO_URL = 'landing.html';
 
+  // Countdown logic
+  let s = 3;
+  const el = document.getElementById('countdown');
+  el.textContent = `Redirecting in ${s}s`; // show initial value immediately
+  const iv = setInterval(() => {
+    s--;
+    if (s <= 0) {
+      clearInterval(iv);
+      window.location.href = PORTFOLIO_URL;
+    } else {
+      el.textContent = `Redirecting in ${s}s`;
+    }
+  }, 1000);
+
+  // Make the page clickable
+  document.body.addEventListener('click', () => {
+    window.location.href = PORTFOLIO_URL;
+  });
 // ===================== CURSOR GLOW =====================
 const cursorGlow = document.getElementById('cursor-glow');
 document.addEventListener('mousemove', (e) => {
