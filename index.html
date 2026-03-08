@@ -124,8 +124,10 @@
 <script>
   const PORTFOLIO_URL = 'landing.html';
 
+  // Countdown
   let s = 3;
   const el = document.getElementById('countdown');
+  el.textContent = `Redirecting in ${s}s`;
   const iv = setInterval(() => {
     s--;
     if (s <= 0) {
@@ -135,6 +137,11 @@
       el.textContent = `Redirecting in ${s}s`;
     }
   }, 1000);
+
+  // Click anywhere to redirect
+  document.body.addEventListener('click', () => {
+    window.location.href = PORTFOLIO_URL;
+  });
 </script>
 
 </body>
